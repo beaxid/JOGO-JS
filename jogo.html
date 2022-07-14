@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joguinho</title>
+
+ <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <!-- 2 jogadores-->
+    <button type="button"onclick="jogadores()">Jogar com 2 jogadores</button>
+<script>
+  function jogadores(){
+  let ar=['Pedra','Papel','Tesoura'];
+
+   jogador1=prompt("Escolha entre pedra papel ou tesoura")
+   jogador2=prompt("Escolha entre pedra papel ou tesoura")
+
+   if(jogador1=="Pedra" && jogador2=="Tesoura"){
+    alert("Jogador 1 ganha");
+}
+else if (jogador1=="Pedra" && jogador2=="Papel"){
+    alert ("Jogador 2 ganha");
+    
+}
+else if (jogador1=="Pedra" && jogador2=="Pedra"){
+    alert ("Empate");
+    
+}
+else if (jogador1=="Papel" && jogador2=="Pedra"){
+    alert ("Jogador 1 ganha");
+    
+}
+else if (jogador1=="Papel" && jogador2=="Tesoura"){
+    alert ("Jogador 2 ganha");
+    
+}
+else if (jogador1=="Papel" && jogador2=="Papel"){
+    alert ("Empate");
+    
+}
+else if (jogador1=="Tesoura" && jogador2=="Papel"){
+    alert ("Jogador 1 ganha");
+    
+}
+else if (jogador1=="Tesoura" && jogador2=="Pedra"){
+    alert ("Jogador 2 ganha");
+    
+}
+else if (jogador1=="Tesoura" && jogador2=="Tesoura"){
+    alert ("Empate");
+    
+}
+else if (jogador1=="Tesoura" && jogador2=="Tesoura"){
+    alert ("Empate");
+    
+}
+}
+
+function pc(){
+    
+}
+</script>
+<!--JOGAR COMPUTADOR-->
+<br>
+<button type="button"onclick="pc()">Jogar contra o computador</button>
+<hr>
+<script>
+
+//placar
+var placaruser= 0;
+var placarcomp= 0;
+
+  function pc(){
+    alert ("Pronto para iniciar o jogo? Clique em ok.")
+
+var userChoice = prompt("Voce escolhe pedra, papel ou tesoura?");
+
+var computerChoice = Math.random();
+
+if (computerChoice < 0.34) {
+
+computerChoice = "pedra";
+
+} else if(computerChoice <= 0.67) {
+
+computerChoice = "papel";
+
+} else {
+
+computerChoice = "tesoura";
+
+} alert ("O computador escolheu: " + computerChoice);
+
+var compare = function (choice1, choice2) {
+
+    if (userChoice === computerChoice)
+    
+    alert ("O resultado é um empate!")
+  
+
+
+    else if (computerChoice === "pedra") {
+
+        if (userChoice === "tesoura")
+
+        alert ("Pedra vence papel")
+
+        else {
+
+           alert ("papel vence")
+
+        }
+
+    }
+
+    else if (computerChoice === "papel") {
+
+        if (userChoice === "pedra")
+
+        alert ("papel vence")
+
+        else {
+
+            alert ("tesoura vence")
+
+        }
+
+    }
+
+    else if (computerChoice === "tesoura") {
+
+        if (userChoice === "pedra")
+
+       alert ("pedra vence")
+
+        else {
+
+            alert ("tesoura vence")
+
+        }
+
+    }
+
+};
+
+compare(userChoice,computerChoice)
+  }
+</script>
+</body>
+</html>
